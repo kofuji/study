@@ -19,6 +19,36 @@ body {
    width: 80%;
    height: 400px;
 }
+.inner{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+
+.clear{
+    clear:both;
+}
+
+
+.box1{
+    width: 30%;
+    height: 95%;
+    border: 1px solid;
+    margin: 3px auto;  
+}
+
+.box2{
+    height:50%;
+    width:90%;
+    position: relative;
+    margin: auto;
+    display: flex; 
+        justify-content: center;
+}
+
 .btn {
 	display: inline-block;
 	width: 160px;
@@ -42,13 +72,52 @@ body {
 	 border-bottom: none;
 }
 
-.inner{
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    margin: auto;
+.btn-animation-02 {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  background-color: #333333;
+  border: 2px solid #333333;
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.btn-animation-02 span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-animation-02::before,
+.btn-animation-02::after {
+  content: "";
+  display: block;
+  background-color: #FFF;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: .2s;
+}
+.btn-animation-02::before {
+  left: 0;
+}
+.btn-animation-02::after {
+  right: 0;
+}
+
+.btn-animation-02:hover:before,
+.btn-animation-02:hover:after {
+  width: 0;
+  background-color: #FFF;
+}
+
+.btn-animation-02:hover {
+  color: #FFF;
 }
 
 </style>
@@ -59,7 +128,10 @@ body {
 
 <div>
 	<div class = "kadomaru inner">
-		<a href="#" class="btn inner">Start</a>
+		<div class="box2">
+			<div class="box1"></div> <div class="box1"></div> <div class="box1"></div>
+		</div>
+		<div class="clear box2"><a herf=# class="btn-animation-02 inner">a</a></div>
 	</div>
 </div>
 
